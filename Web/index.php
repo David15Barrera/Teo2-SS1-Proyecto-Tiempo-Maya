@@ -34,7 +34,7 @@ $cholquij = $nahual." ". strval($energia);
 
 <?php include "NavBar.php" ?>
  <div>
- <section id="inicio">
+ <section id="inicio" class="inicio">
     <div id="inicioContainer" class="inicio-container">
       <h1><br><br>Bienvenido al Tiempo Maya</h1>
       <div id='formulario' style="padding: 15px; width: auto;">
@@ -49,6 +49,6 @@ $cholquij = $nahual." ". strval($energia);
  
   
   <?php include "blocks/bloquesJs1.html" ?>
-
+<script src="js/cambioFondo.js"></script>
 </body>
 </html>

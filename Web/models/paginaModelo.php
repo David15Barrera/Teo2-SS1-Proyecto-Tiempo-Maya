@@ -3,9 +3,16 @@
 
 $conn = include '../conexion/conexion.php';
 $pagina = $_GET['pagina'];
-$informacion = $conn->query("SELECT htmlCodigo,seccion,nombre FROM tiempo_maya.pagina WHERE categoria='" . $pagina . "' order by orden;");
-$secciones = $conn->query("SELECT seccion FROM tiempo_maya.pagina WHERE categoria='" . $pagina . "' group by seccion  order by orden;");
-$elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria='" . $pagina . "' AND nombre!='Informacion' AND seccion!='Informacion' order by orden;");
+$informacion = $conn->query("SELECT htmlCodigo, seccion, nombre FROM tiempo_maya.pagina WHERE categoria='$pagina' ORDER BY orden;");
+$secciones = $conn->query("SELECT seccion 
+FROM tiempo_maya.pagina WHERE categoria='$pagina' GROUP BY seccion
+ORDER BY (
+    SELECT MIN(orden) 
+    FROM tiempo_maya.pagina AS p 
+    WHERE p.seccion = pagina.seccion
+);");
+$elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria='$pagina' AND nombre!='Informacion' AND seccion!='Informacion' order by orden;");
+
 
 
 
@@ -27,7 +34,7 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
 <?php include "../NavBar2.php" ?>
 
 <body>
-    <section id="inicio">
+    <section id="inicio" class="inicio">
         <div id="inicioContainer" class="inicio-container">
 
             <?php echo "<h1>" . $pagina . " </h1>";
@@ -42,7 +49,7 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
 
 
     foreach ($secciones as $seccion) {
-        $stringPrint = "<section id='" . $seccion['seccion'] . "'> <div class='container'> <div class='section-header'><h3 class='section-title'>" . $seccion['seccion'] . " </h3> </div>";
+        $stringPrint = "<section id='" . $seccion['seccion'] . " class='inicio''> <div class='container'> <div class='section-header'><h3 class='section-title'>" . $seccion['seccion'] . " </h3> </div>";
         foreach ($informacion as $info) {
             if ($seccion['seccion'] == $info['seccion']) {
                 if ($info['seccion'] != "Informacion") {
@@ -79,7 +86,7 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
 
 
     <?php include "../blocks/bloquesJs.html" ?>
-
+    <script src="../js/cambioFondoModels.js"></script>
 
 
 

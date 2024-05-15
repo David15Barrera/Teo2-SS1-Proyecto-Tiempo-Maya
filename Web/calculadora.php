@@ -32,9 +32,10 @@ $cholquij = $nahual." ". strval($energia);
 
     <?php include "NavBar.php" ?>
     <div>
-        <section id="inicio">
+        <section id="inicio" class="inicio">
             <div id="inicioContainer" class="inicio-container">
-
+            <br>
+            <br>
                 <div id='formulario'>
                     <h1>Calculadora</h1>
                     <form action="#" method="GET">
@@ -79,7 +80,7 @@ $cholquij = $nahual." ". strval($energia);
 
 
     <?php include "blocks/bloquesJs1.html" ?>
-
+    <script src="js/cambioFondo.js"></script>
 </body>
 
 </html>

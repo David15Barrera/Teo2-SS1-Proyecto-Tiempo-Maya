@@ -77,7 +77,7 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempo_maya.pagina WHERE nom
     <?php include "../blocks/bloquesJs.html" ?>
 
 
-
+    <script src="../js/cambioFondo.js"></script>
 
 </body>
 
