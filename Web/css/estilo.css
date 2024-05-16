@@ -401,3 +401,51 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 13px;
   color: #ccc;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 20px; /* Espacio entre las imágenes */
+}
+
+.grid-item {
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes levitate {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-5px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@keyframes hover-expand {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Aplica la animación a las imágenes */
+.grid-item img {
+  max-width: 70%;
+  height: auto;
+  transition: transform 0.9s ease-in-out;
+}
+
+.grid-item img:hover {
+  animation: levitate 0.5s infinite;
+  filter: drop-shadow(4px 6px 12px gold);
+  animation: hover-expand 0.9s infinite;
+}

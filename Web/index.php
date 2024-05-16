@@ -36,7 +36,7 @@ $cholquij = $nahual." ". strval($energia);
  <div>
  <section id="inicio" class="inicio">
     <div id="inicioContainer" class="inicio-container">
-      <h1><br><br>Bienvenido al Tiempo Maya</h1>
+      <h1>Bienvenido al Tiempo Maya</h1>
       <div id='formulario' style="padding: 15px; width: auto;">
       <h5 style="color: whitesmoke;">Calendario Haab : <?php echo isset($haab) ? $haab : ''; ?></h5>
       <h5 style="color: whitesmoke;">Calendario Cholquij : <?php echo isset($cholquij) ? $cholquij : ''; ?></h5>

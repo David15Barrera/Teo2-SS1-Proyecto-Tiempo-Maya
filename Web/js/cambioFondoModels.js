@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
         imagenIndex = 2;
     } else if (horaActual >= 13 && horaActual < 17) {
         imagenIndex = 3;
-    } else if (horaActual >= 17 && horaActual < 18) {
+    } else if (horaActual >= 17 && horaActual < 19) {
         imagenIndex = 4;
-    } else if (horaActual >= 18 && horaActual < 22) {
+    } else if (horaActual >= 19 && horaActual < 22) {
         imagenIndex = 5;
     } else if (horaActual >= 22 && horaActual < 24) {
         imagenIndex = 6;

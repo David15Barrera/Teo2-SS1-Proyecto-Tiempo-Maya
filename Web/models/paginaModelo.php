@@ -58,22 +58,59 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
                 }
                 $stringPrint .= "<hr>";
                 $stringPrint .= $info['htmlCodigo'];
+
                 foreach ($elementos as $elemento) {
                     if ($elemento['nombre'] != 'Uayeb' && $elemento['nombre'] == $info['nombre']) {
                         $tabla = strtolower($elemento['nombre']);
                         $elementosEl = $conn->query("SELECT nombre FROM tiempo_maya." . $tabla . ";");
-                        $stringPrint .= "<ul>";
+                        
+                        // Inicia el contenedor de la cuadrícula
+                        $stringPrint .= "<div class='grid-container'>";
+                        
                         foreach ($elementosEl as $el) {
                             if ($el['nombre'] == "Informacion") {
-                                $stringPrint .= "<li> <a href='#'>" . $el['nombre'] . " </a> </li>";
+                                // Si es información, simplemente agregue un enlace sin imagen
+                                $stringPrint .= "<a href='#'>" . $el['nombre'] . "</a>";
                             } else {
-                                $stringPrint .= "<li> <a href='paginaModeloElemento.php?elemento=" . $info['nombre'] . "#" . $el['nombre'] . "'>" . $el['nombre'] . " </a> </li>";
+                                // Genera la ruta de la imagen basada en el nombre del elemento
+                                $nombreImagen = str_replace(array("'", "´"), "", $el['nombre']);
+                                $posiblesExtensiones = array("jpg", "jpeg", "png"); // Lista de posibles extensiones de archivo
+                                
+                                $imagenEncontrada = false;
+
+                                foreach ($posiblesExtensiones as $extension) {
+                                    $rutaImagen = "../img/". $info['nombre'] . "/" . strtolower($nombreImagen) . "." . $extension;
+                                    
+                                    // Verifica si la imagen existe
+                                    if (file_exists($rutaImagen)) {
+                                        // Muestra la imagen
+                                        $stringPrint .= "<div class='grid-item'>";
+                                        $stringPrint .= "<a href='paginaModeloElemento.php?elemento=" . $info['nombre'] . "#" . $el['nombre'] . "'>";
+                                        $stringPrint .= "<img src='" . $rutaImagen . "' alt='" . $el['nombre'] . "'>";
+                                        $stringPrint .= "<div class='nombre'>" . $el['nombre'] . "</div>";
+                                        $stringPrint .= "</a>";
+                                        $stringPrint .= "</div>";
+                                        break; // Rompe el bucle una vez que se encuentre la imagen
+                                    } 
+                                }
+                                // Si la imagen no existe, muestra un mensaje de error
+                                if (!file_exists($rutaImagen)) {
+                                    $stringPrint .= "<div class='grid-item'>";
+                                    $stringPrint .= "<p>No se pudo encontrar la imagen correspondiente para " . $el['nombre'] . "</p>";
+                                    $stringPrint .= "</div>";
+                                }
                             }
                         }
-                        $stringPrint .= "</ul>";
+                        
+                        // Cierra el contenedor de la cuadrícula
+                        $stringPrint .= "</div>";
+                        $stringPrint .= "<br>";
+                        $stringPrint .= "<br>";
                     }
                 }
-            }
+                
+            
+           }
         }
         $stringPrint .= "</div> </section> <hr>";
         echo $stringPrint;

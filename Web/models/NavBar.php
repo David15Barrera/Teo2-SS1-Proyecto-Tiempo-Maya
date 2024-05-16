@@ -124,6 +124,7 @@ $periodosNav = $conn->query("SELECT nombre FROM tiempo_maya.periodo order by ord
   </div>
 </header>
 
+<script src="../js/cambioFondo.js"></script>
 
 <script type="text/javascript">
   var relleno = false;

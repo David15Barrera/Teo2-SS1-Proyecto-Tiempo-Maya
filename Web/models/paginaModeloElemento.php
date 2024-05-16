@@ -32,7 +32,7 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempo_maya.pagina WHERE nom
 <?php include "../NavBar2.php" ?>
 
 <body>
-    <section id="inicio">
+    <section id="inicio" class="inicio">
         <div id="inicioContainer" class="inicio-container">
 
             <?php echo "<h1>" . $tabla . " </h1>";
@@ -76,9 +76,7 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempo_maya.pagina WHERE nom
 
     <?php include "../blocks/bloquesJs.html" ?>
 
-
-    <script src="../js/cambioFondo.js"></script>
-
+    <script src="../js/cambioFondoModels.js"></script>
 </body>
 
 </html>

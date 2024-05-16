@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "img/fondos/fase3.png",  // 11am
         "img/fondos/fase4.png",  // 1pm
         "img/fondos/fase5.png",  // 5pm
-        "img/fondos/fase6.png",  // 6pm
+        "img/fondos/fase6.png",  // 8pm
         "img/fondos/fase7.png",  // 10pm
         "img/fondos/fase8.png",  // 12am
         "img/fondos/fase9.png",   // 3am
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
         imagenIndex = 2;
     } else if (horaActual >= 13 && horaActual < 17) {
         imagenIndex = 3;
-    } else if (horaActual >= 17 && horaActual < 18) {
+    } else if (horaActual >= 17 && horaActual < 19) {
         imagenIndex = 4;
-    } else if (horaActual >= 18 && horaActual < 22) {
+    } else if (horaActual >= 19 && horaActual < 22) {
         imagenIndex = 5;
     } else if (horaActual >= 22 && horaActual < 24) {
         imagenIndex = 6;
