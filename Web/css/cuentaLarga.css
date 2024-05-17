@@ -1,0 +1,139 @@
+
+/* Ajustes para el formulario */
+#formulario {
+    background: rgba(63, 64, 66, 0.7);
+    transition: 0.5s;
+    width: 80%;
+    margin-top: 170px;
+}
+
+#formulario h1 {
+    margin: 30px;
+    padding: 0;
+}
+
+#inicio .btn-get-started {
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+#inicio h1 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  @media (max-width: 994px) {
+    #inicio h1 {
+      font-size: 25px;
+      line-height: 36px;
+      margin: 10px;
+      
+     
+    }
+    .form-control{
+        font-size: 10px;
+    }
+
+    .form-label{
+        font-size: 15px;
+    }
+    #formulario{
+        width: 40%;
+    }
+    
+  }
+
+
+
+h1 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.input {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: black;
+}
+
+label, button {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: rgb(255, 255, 255);
+}
+
+input[type="number"], input[type="text"] {
+    padding: 5px;
+    width: 100px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #e4ede5;
+    color: rgb(12, 12, 12);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+span {
+    color: green;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    color: rgb(131, 124, 41);
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    color: rgb(150, 237, 115);
+}
+
+.table-container {
+    overflow-x: auto; /* Añade desplazamiento horizontal */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    #formulario {
+        width: 100%; /* Ancho completo en dispositivos móviles */
+        padding: 10px; /* Ajusta el padding en dispositivos móviles */
+    }
+
+    input[type="number"],
+    input[type="text"] {
+        width: calc(100% - 20px); /* Resta el espacio del padding */
+    }
+
+    .contenido {
+        padding-top: 100px; /* Ajusta el espacio para el navbar en dispositivos móviles */
+    }
+}

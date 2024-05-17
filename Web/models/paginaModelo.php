@@ -73,28 +73,34 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
                                 $stringPrint .= "<a href='#'>" . $el['nombre'] . "</a>";
                             } else {
                                 // Genera la ruta de la imagen basada en el nombre del elemento
-                                $nombreImagen = str_replace(array("'", "´"), "", $el['nombre']);
+                                $nombreImagen = str_replace(array("'", "´", "`"), "", trim($el['nombre'])); // Asegúrate de reemplazar todas las comillas posibles
+                                $nombreImagen = strtolower($nombreImagen); // Convertir el nombre a minúsculas
                                 $posiblesExtensiones = array("jpg", "jpeg", "png"); // Lista de posibles extensiones de archivo
                                 
                                 $imagenEncontrada = false;
-
+                        
                                 foreach ($posiblesExtensiones as $extension) {
-                                    $rutaImagen = "../img/". $info['nombre'] . "/" . strtolower($nombreImagen) . "." . $extension;
+                                    $rutaImagen = "../img/" . $info['nombre'] . "/" . $nombreImagen . "." . $extension;
+                        
+                                    // Depuración: verifica la ruta de la imagen
+                                    error_log("Verificando ruta de la imagen: " . $rutaImagen);
                                     
                                     // Verifica si la imagen existe
                                     if (file_exists($rutaImagen)) {
                                         // Muestra la imagen
                                         $stringPrint .= "<div class='grid-item'>";
                                         $stringPrint .= "<a href='paginaModeloElemento.php?elemento=" . $info['nombre'] . "#" . $el['nombre'] . "'>";
-                                        $stringPrint .= "<img src='" . $rutaImagen . "' alt='" . $el['nombre'] . "'>";
+                                        $stringPrint .= "<img src='" . $rutaImagen . "' alt='" . $el['nombre'] . "' title='" . $el['nombre'] . "'>";
                                         $stringPrint .= "<div class='nombre'>" . $el['nombre'] . "</div>";
                                         $stringPrint .= "</a>";
                                         $stringPrint .= "</div>";
+                                        $imagenEncontrada = true;
                                         break; // Rompe el bucle una vez que se encuentre la imagen
-                                    } 
+                                    }
                                 }
                                 // Si la imagen no existe, muestra un mensaje de error
-                                if (!file_exists($rutaImagen)) {
+                                if (!$imagenEncontrada) {
+                                    error_log("No se pudo encontrar la imagen correspondiente para " . $el['nombre'] . " en las rutas verificadas.");
                                     $stringPrint .= "<div class='grid-item'>";
                                     $stringPrint .= "<p>No se pudo encontrar la imagen correspondiente para " . $el['nombre'] . "</p>";
                                     $stringPrint .= "</div>";
@@ -106,6 +112,7 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
                         $stringPrint .= "</div>";
                         $stringPrint .= "<br>";
                         $stringPrint .= "<br>";
+                             
                     }
                 }
                 

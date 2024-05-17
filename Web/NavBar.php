@@ -11,7 +11,7 @@ $energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;
 <?php include "mensaje.php"; ?>
 
 
-<header id="header" style="padding-left: 600px;">
+<header id="header" style="padding-left: 50px;">
   <div class="container">
     <nav class="navbar navbar-expand-lg" id="nav-menu-container">
       <div class="container-fluid">
@@ -104,8 +104,21 @@ $energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;
               <a class="nav-link" href="models/paginaModelo.php?pagina=Rueda Calendarica">Rueda Calendarica</a>
             </li>
             
-            <li class="nav-item"><a class="nav-link" href="calculadora.php">Calculadora</a></li>
-           
+            <li>
+              <a class="nav-link" href="cuentaLarga.php">Cuenta Larga  &nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <button type="button" style="opacity: 0; height: 0;" class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Cuenta Larga
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li>
+                  <button type="button" style="opacity: 0; height: 0;" class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cuenta Larga
+                  </button>
+                  <a class="nav-link" href="calculadora.php" style="font-size: 13px;">Calculadora </a>
+                </li>
+              </ul>        
+            </li>
+          
           </ul>
         </div>
       </div>
