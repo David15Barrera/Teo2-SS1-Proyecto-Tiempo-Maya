@@ -1,10 +1,18 @@
 
 /* Ajustes para el formulario */
 #formulario {
-    background: rgba(63, 64, 66, 0.7);
+    background: rgba(48, 70, 115, 0.7);
     transition: 0.5s;
-    width: 80%;
-    margin-top: 170px;
+    width: 100%;
+    text-align: center;
+
+}
+
+h2{
+    color: rgb(246, 166, 6);
+}
+h3{
+    color: rgb(0, 0, 0);
 }
 
 #formulario h1 {
@@ -14,11 +22,12 @@
 
 #inicio .btn-get-started {
     margin-left: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 #inicio h1 {
-    font-size: 30px;
+    margin: 0 0 10px 0;
+    font-size: 48px;
     font-weight: 700;
     line-height: 56px;
     text-transform: uppercase;
@@ -30,8 +39,7 @@
       font-size: 25px;
       line-height: 36px;
       margin: 10px;
-      
-     
+         
     }
     .form-control{
         font-size: 10px;
@@ -45,12 +53,15 @@
     }
     
   }
-
+  #inicioContainer{
+    transition: 0.5s;
+  }
 
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     font-weight: bold;
+    text-align: center;
 }
 
 .section {
@@ -86,7 +97,7 @@ button {
 }
 
 span {
-    color: green;
+    color: rgb(140, 239, 140);
     font-weight: bold;
 }
 
@@ -110,7 +121,7 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
-    color: rgb(150, 237, 115);
+    color: rgb(120, 255, 239);
 }
 
 .table-container {
@@ -136,4 +147,63 @@ th {
     .contenido {
         padding-top: 100px; /* Ajusta el espacio para el navbar en dispositivos móviles */
     }
+}
+
+/* Estilos para el contenido recuperado */
+.recuperado {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    color: #333;
+}
+
+.recuperado img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.recuperado p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+
+.steps {
+    list-style: none;
+    padding: 0;
+}
+.steps li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+.steps li:before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: green;
+    font-weight: bold;
+}
+.substeps {
+    list-style: none;
+    padding-left: 20px;
+}
+.substeps li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.substeps li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #333;
 }
