@@ -102,7 +102,7 @@ $energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;
               </ul>
             </li>
             <li class="nav-item">
-              <a  href="models/paginaModelo.php?pagina=Rueda Calendarica">Rueda Calendarica</a>
+              <a href="models/paginaModelo.php?pagina=Rueda Calendarica">Rueda Calendarica</a>
               <button type="button" style="opacity: 0; height: 0;" class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Rueda Calendarica
               </button>
