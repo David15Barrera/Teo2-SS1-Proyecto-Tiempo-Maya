@@ -5,6 +5,7 @@ $kinesNav = $conn->query("SELECT nombre FROM tiempo_maya.kin order by nombre;");
 $uinalesNav = $conn->query("SELECT nombre FROM tiempo_maya.uinal order by nombre;");
 $nahualesNav = $conn->query("SELECT nombre FROM tiempo_maya.nahual order by nombre;");
 $energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;");
+
 //$periodosNav = $conn->query("SELECT nombre FROM tiempo_maya.periodo order by orden ;");
 
 ?>
@@ -102,6 +103,14 @@ $energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;
             </li>
             <li class="nav-item">
               <a class="nav-link" href="models/paginaModelo.php?pagina=Rueda Calendarica">Rueda Calendarica</a>
+              <button type="button" style="opacity: 0; height: 0;" class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Rueda Calendarica
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li>
+                  <a class="nav-link" href="numeros.php" style="font-size: 13px;">Numeracion Maya</a>
+                </li>
+              </ul>       
             </li>
             
             <li>

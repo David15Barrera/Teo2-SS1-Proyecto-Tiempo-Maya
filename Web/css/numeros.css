@@ -1,0 +1,106 @@
+.container-info {
+    margin: 0 auto;
+    padding: 0 60px; 
+    
+    max-width: 1200px;
+}
+h2{
+    color: black;
+}
+.container-conver {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+.image-container img {
+    /* Tamaño fijo */
+    /* width: 300px; */
+    /* height: auto; */
+
+    /* Tamaño responsivo */
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+---------------------------------------------------------------------------Numeros
+
+*/
+
+
+.maya-number {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.maya-digit {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.points {
+    display: flex;
+    justify-content: center;
+}
+
+.point, .bar, .shell {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+}
+
+.point {
+    background-color: black;
+    border-radius: 50%;
+}
+
+.bar {
+    background-color: black;
+    height: 10px;
+    width: 100px;
+}
+
+.shell {
+    width: 50px;
+    height: 50px;
+    background: url('../img/cero.png') no-repeat center;
+    background-size: contain;
+}
+
